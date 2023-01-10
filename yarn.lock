@@ -3008,6 +3008,11 @@ check-types@^11.1.1:
   resolved "https://registry.yarnpkg.com/check-types/-/check-types-11.2.2.tgz#7afc0b6a860d686885062f2dba888ba5710335b4"
   integrity sha512-HBiYvXvn9Z70Z88XKjz3AEKd4HJhBXsa3j7xFnITAzoS8+q6eIGi8qDB8FKPBAjtuxjI/zFpwuiCb8oDtKOYrA==
 
+checkboxland@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/checkboxland/-/checkboxland-1.5.0.tgz#452bec7614f38a9f00c46520c1b24aaf6d072f6a"
+  integrity sha512-f2PJdN1r9QFYwIu1qBj3d1fH2toD8uD8FuEnXv5M+EKw8h1sjEkAYnzM+TWu4Gz1j1f1ye+GTvj2y3xitQxFAw==
+
 chokidar@^3.4.2, chokidar@^3.5.3:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
