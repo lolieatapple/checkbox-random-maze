@@ -143,9 +143,61 @@ function App() {
         return cell === 2 ? 0 : cell;
       });
     })
+    ground.setData(data);
 
     ground.setData([[2]], player);
   }, [player, ground]);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      // Your code here
+      // console.log('event', event);
+      let data = ground.getData();
+
+      switch(event.key) {
+        case 'ArrowUp':
+        case 'w':
+          setPlayer((pre)=>{
+            if (pre.y-1 < 0 || data[pre.y - 1][pre.x] === 1) {
+              return pre;
+            }
+            return {x: pre.x, y: pre.y - 1};
+          });
+          break;
+        case 'ArrowDown':
+        case 's':
+          setPlayer((pre)=>{
+            if (pre.y+1 >= NUM_ROWS || data[pre.y + 1][pre.x] === 1) {
+              return pre;
+            }
+            return {x: pre.x, y: pre.y + 1};
+          });
+          break;
+        case 'ArrowLeft':
+        case 'a':
+          setPlayer((pre)=>{
+            if (pre.x-1 <0 ||  data[pre.y][pre.x - 1] === 1) {
+              return pre;
+            }
+            return {x: pre.x - 1, y: pre.y};
+          });
+          break;
+        case 'ArrowRight':
+        case 'd':
+          setPlayer((pre)=>{
+            if (pre.x + 1 >= NUM_COLS || data[pre.y][pre.x + 1] === 1) {
+              return pre;
+            }
+            return {x: pre.x + 1, y: pre.y};
+          });
+          break;
+      }
+    }
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    }
+  }, [ground])
   
   return (
     <div className="App">
