@@ -64,12 +64,12 @@ function isValidMove(maze, row, col) {
   );
 }
 
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
+// function shuffle(array) {
+//   for (let i = array.length - 1; i > 0; i--) {
+//     const j = Math.floor(Math.random() * (i + 1));
+//     [array[i], array[j]] = [array[j], array[i]];
+//   }
+// }
 
 function App() {
   const [resetCount, setResetCount] = useState(0);
@@ -190,6 +190,8 @@ function App() {
             }
             return {x: pre.x + 1, y: pre.y};
           });
+          break;
+        default:
           break;
       }
     }
